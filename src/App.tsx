@@ -144,58 +144,85 @@ export default function App() {
             <p className="text-liquid-glass-subtle max-w-2xl font-light">Classified mission files and deployed architectural constructs representing current computational capabilities.</p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 mt-10 pb-4 max-w-6xl mx-auto">
             {projects.map((project, i) => (
-              <div key={i} className="group relative rounded-[2rem] p-[1px] overflow-hidden transition-all duration-500 hover:scale-[1.02]">
-                {/* Shimmering background interaction on hover */}
-                <div className="absolute inset-0 bg-gradient-to-br from-white/30 via-transparent to-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                
-                {/* The Liquid Glass Box */}
-                <div className="relative h-full w-full bg-transparent backdrop-blur-[16px] 
-                                border border-white/10 group-hover:border-white/20
-                                rounded-[2rem] p-8 md:p-10 shadow-[0_8px_32px_rgba(0,0,0,0.5),inset_0_1px_4px_rgba(255,255,255,0.1)] 
-                                flex flex-col z-10 overflow-hidden transition-all duration-500">
-                  
-                  {/* Subtle Liquid Glow Base Inside the glass */}
-                  <div className="absolute -bottom-24 -right-24 w-64 h-64 bg-blue-500/10 rounded-full blur-[60px] group-hover:bg-blue-400/20 group-hover:animate-pulse transition-all duration-700 pointer-events-none" />
-                  <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/[0.03] to-white/[0.1] opacity-50 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+              <div key={i} className="group relative flex flex-col md:flex-row w-full bg-transparent backdrop-blur-[12px] border border-white/20 rounded-[1.5rem] shadow-[0_8px_32px_rgba(0,0,0,0.5),inset_0_1px_4px_rgba(255,255,255,0.3)] overflow-visible transition-all duration-500 hover:scale-[1.01] hover:border-cyan-400/50 hover:shadow-[0_0_30px_rgba(0,255,255,0.15)]">
 
-                  {/* Content */}
-                  <div className="relative z-20 flex-1 flex flex-col">
-                    <h3 className="text-2xl font-bold tracking-tight text-white mb-1 group-hover:text-blue-400 transition-colors duration-300">
-                      {project.title}
-                    </h3>
-                    <p className="text-sm font-mono text-liquid-glass-blue mb-6 border-b border-white/10 pb-4">
-                      {project.subtitle}
-                    </p>
-                    <p className="text-gray-300 text-sm leading-relaxed mb-6">
-                      {project.description}
-                    </p>
-                    
-                    <div className="mb-6">
-                      <h4 className="text-[10px] font-bold uppercase tracking-wider text-white/50 mb-3">Key Features</h4>
-                      <ul className="space-y-2">
-                        {project.features.map((feature, idx) => (
-                          <li key={idx} className="flex items-start text-sm text-gray-400 group-hover:text-gray-300 transition-colors">
-                            <span className="text-blue-500 mr-2 mt-0.5 opacity-70">▹</span>
-                            <span className="leading-snug">{feature}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  </div>
-                  
-                  {/* Tech Stack Chips at bottom */}
-                  <div className="relative z-20 pt-6 mt-auto border-t border-white/5">
-                    <div className="flex flex-wrap gap-2">
-                      {project.techStack.map((tech, idx) => (
-                        <span key={idx} className="px-3 py-1.5 text-[10px] sm:text-xs font-mono tracking-wider text-white/70 bg-white/5 border border-white/10 rounded-full flex items-center justify-center shadow-[inset_0_1px_2px_rgba(255,255,255,0.1)] group-hover:border-white/20 transition-colors duration-300">
-                          {tech}
-                        </span>
-                      ))}
+                {/* Floating HUD Labels */}
+                <div className="absolute -top-6 left-4 md:left-6 flex flex-col items-start opacity-70 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none">
+                  <span className="text-white font-bold tracking-widest uppercase text-xs drop-shadow-[0_0_8px_rgba(255,255,255,0.8)]">
+                    {project.title.split(' ')[1] || project.title}
+                  </span>
+                  <span className="text-cyan-400 font-mono text-[9px] tracking-widest font-bold">
+                    SYSTEM.ONLINE // 2026
+                  </span>
+                </div>
+
+                {/* Left Pane - Hologram Emblem Area */}
+                <div className="relative w-full md:w-1/4 p-5 flex items-center justify-center border-b md:border-b-0 md:border-r border-white/10 bg-white/[0.02] rounded-t-[1.5rem] md:rounded-l-[1.5rem] md:rounded-tr-none min-h-[120px]">
+                  <div className="relative w-20 h-20 flex items-center justify-center">
+                    <div className="absolute inset-0 border border-cyan-400/30 rotate-45 rounded-md group-hover:rotate-90 transition-transform duration-1000" />
+                    <div className="absolute inset-1.5 border border-cyan-400/50 rotate-12 rounded-md group-hover:-rotate-45 transition-transform duration-1000" />
+                    <div className="absolute inset-0 bg-cyan-400/10 blur-xl group-hover:bg-cyan-400/20 transition-colors duration-500" />
+                    <div className="relative z-10 text-4xl drop-shadow-[0_0_15px_rgba(0,255,255,0.8)]">
+                      {project.title.split(' ')[0]}
                     </div>
                   </div>
                 </div>
+
+                {/* Right Pane - Embedded Terminal Data Screen */}
+                <div className="relative w-full md:w-3/4 p-3 md:p-4 bg-white/[0.01]">
+                   {/* Dark Terminal Window Inside Glass */}
+                   <div className="relative h-full w-full bg-[#040f16]/90 rounded-lg border border-cyan-500/20 p-4 md:p-5 flex flex-col shadow-[inset_0_0_15px_rgba(0,255,255,0.05)] overflow-hidden">
+                      
+                      {/* Terminal Header */}
+                      <div className="flex justify-between items-center mb-4 border-b border-cyan-500/20 pb-2">
+                         <span className="text-cyan-400 font-mono text-[9px] font-bold tracking-widest flex items-center gap-2">
+                           <span className="w-1.5 h-1.5 bg-cyan-400 animate-pulse rounded-[1px]" />
+                           DECRYPTING FLOW...
+                         </span>
+                         <div className="flex gap-1.5">
+                           <div className="w-1.5 h-1.5 bg-cyan-400/60 rounded-[1px]" />
+                           <div className="w-1.5 h-1.5 bg-cyan-400/60 rounded-[1px]" />
+                           <div className="w-1.5 h-1.5 bg-cyan-400/60 rounded-[1px]" />
+                         </div>
+                      </div>
+
+                      {/* Terminal Content */}
+                      <h3 className="text-lg md:text-xl font-bold tracking-tight text-white mb-1 group-hover:text-cyan-300 transition-colors duration-300">
+                        {project.title.substring(project.title.indexOf(' ') + 1)}
+                      </h3>
+                      <p className="text-[10px] font-mono text-cyan-400/80 mb-3 uppercase tracking-wide">
+                        {project.subtitle}
+                      </p>
+                      <p className="text-cyan-100/70 text-[11px] leading-relaxed font-mono mb-4">
+                        {project.description}
+                      </p>
+                      
+                      <div className="mb-5 flex-1">
+                        <ul className="space-y-1.5">
+                          {project.features.map((feature, idx) => (
+                            <li key={idx} className="flex items-start text-[10px] font-mono text-cyan-300/60 group-hover:text-cyan-300/90 transition-colors">
+                              <span className="text-cyan-500 mr-2 mt-[2px] font-bold opacity-80">&gt;</span>
+                              <span className="leading-relaxed">{feature}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                      
+                      {/* Tech Stack Terminal Tags */}
+                      <div className="pt-3 mt-auto border-t border-cyan-500/20">
+                        <div className="flex flex-wrap gap-2">
+                          {project.techStack.map((tech, idx) => (
+                            <span key={idx} className="px-2 py-[2px] text-[8px] sm:text-[9px] uppercase font-mono tracking-widest text-cyan-400 bg-cyan-900/30 border border-cyan-500/30 rounded-sm shadow-[0_0_6px_rgba(0,255,255,0.1)]">
+                              {tech}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+                   </div>
+                </div>
+
               </div>
             ))}
           </div>

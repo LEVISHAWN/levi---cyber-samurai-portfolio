@@ -2,19 +2,56 @@
 <img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
 </div>
 
-# Run and deploy your AI Studio app
+# LEVI.SYS | Cyber-Samurai Portfolio
 
-This contains everything you need to run your app locally.
+A meticulously crafted, high-fidelity portfolio website designed for a cybersecurity professional and developer. The project employs a "Liquid Glassmorphism" and cyberpunk aesthetic, rendering interactive, holographic-style UI components that feel like advanced terminal systems.
 
-View your app in AI Studio: https://ai.studio/apps/c0be2b69-9783-409e-a2d4-b3a248118b8c
+## 🚀 Live Demo & Visuals
+*(Deployment Link Pending)*
 
-## Run Locally
+## 🛠 Tech Stack
 
-**Prerequisites:**  Node.js
+- **Framework:** React.js, TypeScript, Vite
+- **Styling:** Tailwind CSS v4
+- **Icons:** Lucide-React
+- **Animations:** Motion (Framer/React)
+- **Assets:** Custom static images for base and mask composite layouts.
 
+## 🔮 Key Features
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+- **Liquid Glassmorphism:** True `100% transparent` glass panels that rely exclusively on heavy `backdrop-blur` and glowing light-catcher borders, simulating physical water/glass rather than standard flat UI cards.
+- **Holographic Dual-Pane Consoles:** The Projects section is built exactly like a sci-fi tactical HUD. It splits content into a left-pane geometric shield generator and a right-pane embedded tracking terminal.
+- **Hover-Reveal Optics:** Leveraging `group-hover`, the main hero card smoothly expands a liquid glass layer over a base image, revealing a meticulously aligned secondary mask image for a cinematic effect.
+- **Responsive Architecture:** Fully scales from narrow mobile views to ultra-wide panoramic terminal arrays.
+
+## 📦 Installation & Setup
+
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/LEVISHAWN/levi---cyber-samurai-portfolio.git
+   cd levi---cyber-samurai-portfolio
+   ```
+
+2. **Install dependencies:**
+   ```bash
+   npm install
+   ```
+
+3. **Start the Development Server:**
+   ```bash
+   npm run dev
+   ```
+
+4. **Build for Production:**
+   ```bash
+   npm run build
+   ```
+
+## 📁 Project Structure
+
+- `src/App.tsx`: The primary application matrix. Contains all layout data for the Hero, Skills, Projects, About, and Contact sections.
+- `src/components/CarGlassmorphism.tsx`: The highly complex standalone module responsible for the "Masked Reveal" effect seen in the Hero section.
+- `src/index.css`: Injects global design tokens, animations (like the slow ambient pulses), and custom classes where utility variants are insufficient.
+
+## 🛡️ License
+This project is for personal use and portfolio demonstration.
