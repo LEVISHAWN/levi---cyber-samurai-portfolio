@@ -55,10 +55,10 @@ export default function App() {
           LEVI<span className="opacity-50">.SYS</span>
         </div>
         <div className="hidden md:flex space-x-8 font-sans text-sm font-medium text-liquid-glass-subtle">
-          <a href="#skills" className="hover:text-white transition-colors">Skills</a>
-          <a href="#projects" className="hover:text-white transition-colors">Projects</a>
-          <a href="#about" className="hover:text-white transition-colors">About</a>
-          <a href="#contact" className="hover:text-white transition-colors">Contact</a>
+          <a href="#skills" className="hover-text-liquid-glass-white transition-colors text-liquid-glass-hover">Skills</a>
+          <a href="#projects" className="hover-text-liquid-glass-white transition-colors text-liquid-glass-hover">Projects</a>
+          <a href="#about" className="hover-text-liquid-glass-white transition-colors text-liquid-glass-hover">About</a>
+          <a href="#contact" className="hover-text-liquid-glass-white transition-colors text-liquid-glass-hover">Contact</a>
         </div>
       </nav>
 
@@ -92,10 +92,10 @@ export default function App() {
               transition={{ duration: 0.7, delay: 0.2, ease: "easeOut" }}
               className="flex flex-wrap gap-4"
             >
-              <button className="px-8 py-4 glass-panel text-liquid-glass font-semibold rounded-full btn-liquid">
+              <button className="px-8 py-4 glass-panel text-liquid-glass font-semibold rounded-full btn-liquid text-liquid-glass-hover">
                 Initiate Contact
               </button>
-              <button className="px-8 py-4 glass-panel text-liquid-glass font-semibold rounded-full btn-liquid">
+              <button className="px-8 py-4 glass-panel text-liquid-glass font-semibold rounded-full btn-liquid text-liquid-glass-hover">
                 View Logs
               </button>
             </motion.div>
@@ -113,7 +113,7 @@ export default function App() {
       <section id="skills" className="relative z-10 py-24">
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex flex-col items-center text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-semibold tracking-tight mb-4 text-liquid-glass">Combat Arsenal</h2>
+            <h2 className="text-3xl md:text-4xl font-semibold tracking-tight mb-4 text-liquid-glass cursor-default hover:drop-shadow-[0_0_15px_rgba(255,255,255,0.5)] transition-all duration-500">Combat Arsenal</h2>
             <p className="text-liquid-glass-subtle max-w-2xl font-light">Equipped with enterprise-grade security tools and methodologies to identify, mitigate, and neutralize digital threats.</p>
           </div>
           
@@ -140,7 +140,7 @@ export default function App() {
       <section id="projects" className="relative z-10 py-24">
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex flex-col items-center text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-semibold tracking-tight mb-4 text-liquid-glass">Active Operations</h2>
+            <h2 className="text-3xl md:text-4xl font-semibold tracking-tight mb-4 text-liquid-glass cursor-default hover:drop-shadow-[0_0_15px_rgba(255,255,255,0.5)] transition-all duration-500">Active Operations</h2>
             <p className="text-liquid-glass-subtle max-w-2xl font-light">Classified mission files and deployed architectural constructs representing current computational capabilities.</p>
           </div>
           
@@ -189,13 +189,13 @@ export default function App() {
                       </div>
 
                       {/* Terminal Content */}
-                      <h3 className="text-lg md:text-xl font-bold tracking-tight text-white mb-1 group-hover:text-cyan-300 transition-colors duration-300">
+                      <h3 className="text-xl md:text-2xl font-bold tracking-tight text-white mb-2 group-hover:text-liquid-glass transition-colors duration-300 text-liquid-glass-hover">
                         {project.title.substring(project.title.indexOf(' ') + 1)}
                       </h3>
                       <p className="text-[10px] font-mono text-cyan-400/80 mb-3 uppercase tracking-wide">
                         {project.subtitle}
                       </p>
-                      <p className="text-cyan-100/70 text-[11px] leading-relaxed font-mono mb-4">
+                      <p className="text-cyan-100/70 text-sm leading-relaxed font-mono mb-6 hover:text-white transition-colors duration-300 cursor-default">
                         {project.description}
                       </p>
                       
@@ -243,7 +243,7 @@ export default function App() {
               <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/[0.03] to-white/[0.1] opacity-50 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
               
               <div className="relative z-20">
-                <h2 className="text-3xl md:text-4xl font-semibold tracking-tight mb-8 text-liquid-glass">System Profile</h2>
+                <h2 className="text-3xl md:text-4xl font-semibold tracking-tight mb-8 text-liquid-glass cursor-default hover:drop-shadow-[0_0_15px_rgba(255,255,255,0.5)] transition-all duration-500">System Profile</h2>
                 <div className="space-y-6 text-gray-300 md:text-lg leading-relaxed font-light max-w-3xl">
                   <p>
                     I’m a novice software developer with a strong interest in cybersecurity and intelligent systems. I enjoy turning ideas into real applications, especially those that combine practical functionality with security awareness.
@@ -269,7 +269,9 @@ export default function App() {
               <div className="absolute inset-0 bg-gradient-to-br from-white/30 via-transparent to-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               <div className="relative h-full w-full bg-transparent backdrop-blur-[16px] border border-white/10 group-hover:border-white/20 rounded-[2rem] py-6 px-8 shadow-[0_8px_32px_rgba(0,0,0,0.5),inset_0_1px_4px_rgba(255,255,255,0.1)] flex items-center justify-center gap-4 transition-all duration-500">
                  <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/[0.03] to-white/[0.1] opacity-50 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
-                 <span className="text-2xl">✉️</span>
+                 <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" className="text-red-500 drop-shadow-[0_0_8px_rgba(239,68,68,0.5)]">
+                   <path d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 0 1 0 19.366V5.457c0-2.023 2.309-3.178 3.927-1.964L12 9.573l8.073-6.08c1.618-1.214 3.927-.059 3.927 1.964z"/>
+                 </svg>
                  <span className="font-mono text-liquid-glass-blue">levimugendi8@gmail.com</span>
               </div>
             </a>
@@ -278,7 +280,9 @@ export default function App() {
                <div className="absolute inset-0 bg-gradient-to-br from-white/30 via-transparent to-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                <div className="relative h-full w-full bg-transparent backdrop-blur-[16px] border border-white/10 group-hover:border-white/20 rounded-[2rem] py-6 px-8 shadow-[0_8px_32px_rgba(0,0,0,0.5),inset_0_1px_4px_rgba(255,255,255,0.1)] flex items-center justify-center gap-4 transition-all duration-500">
                  <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/[0.03] to-white/[0.1] opacity-50 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
-                 <span className="text-2xl">📱</span>
+                 <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" className="text-green-500 drop-shadow-[0_0_8px_rgba(34,197,94,0.5)]">
+                   <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-4.721 7.454c-3.444 0-6.435-1.767-8.202-4.456l-3.351 1.096 1.115-3.264C1.04 13.918.4 12.016.4 10.018.4 4.542 4.842.1 10.32.1c5.476 0 9.919 4.442 9.919 9.918 0 5.476-4.443 9.918-9.919 9.918z"/>
+                 </svg>
                  <span className="font-mono text-liquid-glass-blue">+254791470074</span>
                </div>
             </a>
