@@ -115,12 +115,12 @@ export default function App() {
               transition={{ duration: 0.7, delay: 0.2, ease: "easeOut" }}
               className="flex flex-wrap gap-4"
             >
-              <button className="px-8 py-4 glass-panel text-liquid-glass font-semibold rounded-full btn-liquid text-liquid-glass-hover">
+              <a href="#contact" className="px-8 py-4 glass-panel text-liquid-glass font-semibold rounded-full btn-liquid text-liquid-glass-hover inline-block text-center">
                 Initiate Contact
-              </button>
-              <button className="px-8 py-4 glass-panel text-liquid-glass font-semibold rounded-full btn-liquid text-liquid-glass-hover">
+              </a>
+              <a href="#projects" className="px-8 py-4 glass-panel text-liquid-glass font-semibold rounded-full btn-liquid text-liquid-glass-hover inline-block text-center">
                 View Logs
-              </button>
+              </a>
             </motion.div>
           </div>
 
