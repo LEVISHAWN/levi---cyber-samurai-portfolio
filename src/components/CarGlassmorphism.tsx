@@ -7,7 +7,7 @@ const CarGlassmorphism = () => {
     <div className="group relative w-full h-full min-h-[500px] lg:min-h-[600px] flex items-center justify-center bg-[#0a0a0a] overflow-hidden rounded-[2.5rem] border border-white/10 shadow-2xl transition-all duration-700">
       
       {/* 1. BASE LAYER: Image 1 (Normal) - Removed scaling to ensure perfect 1:1 frame match */}
-      <div className="absolute inset-0 w-full h-full z-0 transition-all duration-1000 group-hover:blur-[6px]">
+      <div className="absolute inset-0 w-full h-full z-0 transition-all duration-700 group-hover:blur-[6px] group-hover:opacity-0">
         <img 
           src={bgImage} 
           alt="Base" 
@@ -38,7 +38,7 @@ const CarGlassmorphism = () => {
         <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/[0.05] to-white/[0.25] pointer-events-none z-30" />
 
         {/* 3. FRONT LAYER: Image 2 (Mask) blending with the glass */}
-        <div className="absolute inset-0 z-20 overflow-hidden opacity-[0.85]">
+        <div className="absolute inset-0 z-20 overflow-hidden opacity-100">
             <img 
               src={fgImage} 
               alt="Mask Reveal" 

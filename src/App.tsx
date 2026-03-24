@@ -4,8 +4,10 @@
  */
 
 import CarGlassmorphism from './components/CarGlassmorphism';
-import { motion } from 'motion/react';
+import { motion, useScroll, useTransform } from 'motion/react';
 import { Shield, Terminal, Code, Cpu } from 'lucide-react';
+import porscheImage from '../images/cars/Singer-Porsche-Pictures-27-removebg-preview.png';
+import bmwImage from '../images/cars/bmw-m3-removebg-preview.png';
 
 const projects = [
   {
@@ -39,6 +41,7 @@ const projects = [
 ];
 
 export default function App() {
+  const { scrollYProgress } = useScroll();
   return (
     <div className="min-h-screen bg-cyber-grey text-white font-sans selection:bg-white/30 selection:text-white relative overflow-hidden">
       
@@ -48,6 +51,26 @@ export default function App() {
         <div className="absolute bottom-[-10%] right-[-10%] w-[60vw] h-[60vw] rounded-full bg-purple-600/20 blur-[150px] mix-blend-screen animate-pulse" style={{ animationDuration: '12s' }}></div>
         <div className="absolute top-[40%] left-[20%] w-[40vw] h-[40vw] rounded-full bg-cyan-500/10 blur-[100px] mix-blend-screen animate-pulse" style={{ animationDuration: '10s' }}></div>
       </div>
+
+      {/* Car Background Animations */}
+      <motion.div
+        style={{
+          rotate: useTransform(scrollYProgress, [0, 0.5], [0, 180]),
+          opacity: useTransform(scrollYProgress, (v) => (v < 0.45 ? 0.3 * (1 - v / 0.45) : 0)),
+        }}
+        className="fixed inset-0 z-0 pointer-events-none flex items-center justify-center"
+      >
+        <img src={porscheImage} alt="Porsche" className="w-auto h-full object-contain max-w-[80vw]" />
+      </motion.div>
+      <motion.div
+        style={{
+          rotate: useTransform(scrollYProgress, [0.5, 1], [180, 0]),
+          opacity: useTransform(scrollYProgress, (v) => (v > 0.55 ? 0.3 * ((v - 0.55) / 0.45) : 0)),
+        }}
+        className="fixed inset-0 z-0 pointer-events-none flex items-center justify-center"
+      >
+        <img src={bmwImage} alt="BMW" className="w-auto h-full object-contain max-w-[80vw]" />
+      </motion.div>
 
       {/* Navigation */}
       <nav className="fixed top-6 left-1/2 -translate-x-1/2 w-[95%] max-w-7xl z-50 glass-panel rounded-full px-8 h-16 flex items-center justify-between">
